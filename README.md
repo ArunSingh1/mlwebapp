@@ -17,4 +17,4 @@ Step3 cd /serving
     run - "uvicorn main:app --reload"
     run - "streamlit run apimodel.py"
 
-![app](mnist.png)  
+![app](mnist.PNG)  
