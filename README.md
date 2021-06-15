@@ -1,4 +1,4 @@
-# Digit Recongizer using ML and deep learning models 
+# Digit Recogizer using ML and deep learning models 
 
 A Machine learning webapp build using Streamlit and FAST API to predict the digit of the uploaded image
 using ML and Deeplearning models. MLFLOW is used for tracking.
