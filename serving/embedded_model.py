@@ -56,7 +56,7 @@ def imgshow(image_file):
             print('RL selected')
             pred(img,rf_model)
         else:
-            print('NONE')
+            pass
 
     else:
         pass
@@ -66,8 +66,8 @@ def imgshow(image_file):
 
 def show_options():
     option = st.selectbox(
-        'Select the model you need to run predictions on',
-        ('RF', 'SVM', 'Deep CNN'))
+        'Select the model you need to run predictions on (only RF model availble)',
+        ('SVM', 'RF','Deep CNN'))
     #print(option)
 
     st.write('Selected  :', option)
