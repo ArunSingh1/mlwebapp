@@ -18,3 +18,5 @@ Step3 cd /serving
     run - "streamlit run apimodel.py"
 
 ![app](mnist.PNG)  
+
+![batchprocess](batch.PNG)  

@@ -8,6 +8,7 @@ import json
 app = FastAPI()
 
 rf_model = joblib.load(open('/home/arun/Documents/mlwebapp/models/rf.pkl', 'rb'))
+
 @app.get("/test")
 def read_root():
     return {"different": "World"}
@@ -23,7 +24,7 @@ async def read_item(item_id,secnd):
     print('model',model)
     
     if secnd == "DEEPCNN":
-        pred = rf_model.predict(topred)
+        pred = rf_model.predict(topred)         #        np.argmax(model_ann.predict(data),axis=-1)
         prediction  =  "Predicted label - {}".format(model) + " = " + str(pred[0])
         print(prediction)
     elif secnd == 'RF':

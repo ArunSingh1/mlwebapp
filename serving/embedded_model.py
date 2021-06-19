@@ -37,29 +37,45 @@ def pred(img,model):
     return prediction
 
 ### load image and view image
-image_file = st.file_uploader("Upload Image",type=['png','jpeg','jpg'])
+image_file = st.file_uploader("Upload Image",type=['png','jpeg','jpg'],accept_multiple_files=True,)
 
 @st.cache
 def load_image(image_file):
 	img = Image.open(image_file)
 	return img
 
-def imgshow(image_file):
-    if image_file is not None:    
-        img = load_image(image_file)
-        st.image(img,width=250,height=250)
-        file_details = {"Filename":image_file.name,"FileType":image_file.type,"FileSize":image_file.size}
 
-        #show options and run predictions based on selected options
-        option = show_options()
-        if option == 'RF':
-            print('RL selected')
-            pred(img,rf_model)
+
+def imgshow(image_file):
+    #option = show_options()
+    for i in image_file:
+        #print(type(i))
+        
+        if i is not None:    
+            img = load_image(i)
+            st.image(img,width=250,height=250)
+            file_details = {"Filename":i.name,"FileType":i.type,"FileSize":i.size}
+
+            #show options and run predictions based on selected options
+            #option = show_options()
+            # if option == 'RF':
+            #     print('RL selected')
+            #     pred(img,rf_model)
+            # else:
+            #     pass
+            # pred(img,rf_model)
+
         else:
             pass
-
+    option = show_options()
+    if option == 'RF':
+        print('RL selected')
+        for i in image_file:
+            img = load_image(i)
+            pred(img,rf_model)
     else:
         pass
+       
     return 
 #############
 
@@ -72,6 +88,7 @@ def show_options():
 
     st.write('Selected  :', option)
     return option
+
 
 
 imgshow(image_file)
