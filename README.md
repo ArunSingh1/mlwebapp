@@ -1,4 +1,4 @@
-# Digit Recongizer using ML and deep learning models 
+# Digit Recognizer using ML and deep learning models 
 
 A Machine learning webapp build using Streamlit and FAST API to predict the digit of the uploaded image
 using ML and Deeplearning models. MLFLOW is used for tracking.
@@ -18,5 +18,8 @@ Step3 cd /serving
     run - "streamlit run apimodel.py"
 
 ![app](mnist.PNG)  
+<<<<<<< HEAD
 
 ![batchprocess](batch.PNG)  
+=======
+>>>>>>> b68a86eafb87a5efcdbf786ba9f99c348b75f0fc
